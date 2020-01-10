@@ -1,0 +1,41 @@
+\documentclass{article}
+
+% Packages
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{hyperref} \hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+}
+
+\title{CSCI 4511W Writing Assignment 5}
+\author{Brian Cooper \\ coope824@umn.edu \\ University of Minnesota}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  {\textit{Below is the ``Related Work'' section that will go into my final project report. My problem is comparing the performance of quantum machine learning algorithms to their classical counterparts on bioinformatics classification problems.}
+\end{center}
+
+\section*{Related Work}
+  Quantum computing, machine learning, and bioinformatics are established, yet highly plastic fields. Some researchers from the somewhat disparate disciplines have combined their efforts. Quantum machine learning, a synthesis of quantum computing and machine learning, is built upon the foundations of quantum mechanics and artificial intelligence. Such research efforts customarily uses classical machine learning approaches as a baseline for analyzing corresponding quantum counterparts, however they differ in their proposals for analysis and applied solutions. Biamonte, et al.~\cite{biamonte} argue that machine learning has a bright future when utilizing quantum processing power, and they mention that significant advancements have been made when it comes to hardware. They clarify that certain devices (such as annealing quantum computers) \textit{have} been built with apparently large qubit counts (2000, for example), although they do not communicate with each other well at such a scale yet, so there is ample room for improvement. Dunjko, et al.~\cite{dunjko} primarily discussed complexity improvements for quantum methods. Finally, the paper by Schuld, et al.~\cite{schuld} solely zones in on classification and clustering methods (although in great depth) and emphasizes that we need to be careful in the wishful optimism of quantum computing's usefulness to machine learning -- especially considering its infancy. Despite this caution, the paper expresses hope and considers the field to have a promising future. \\
+
+  When it comes to practicality, it is argued in~\cite{biamonte} that the foundation for quantum machine learning algorithms is strong, yet considerably limited by hardware and software challenges. An important point in~\cite{schuld} is that the ability to simulate the actual, concrete learning process in quantum systems is unsatisfactorily documented, and thus requires more development. \\
+
+  Two dominant machine learning tasks, classification and clustering, are commonly used in modern problems. Although my problem is focused on classification, it is useful to recognize clustering methods within the domain to discover auxiliary information. Each is composed of varying depths of analysis in associated algorithms (such as support vector machines with different kernels for classification and k-means for clustering). Biamonte, et al.~\cite{biamonte} provide several runtime complexity difference estimates for various quantum algorithms. Quantum support vector machines, for example, are estimated to perform faster with an $O(\log{N})$ speedup (exponential speedup), albeit with certain constraints~\cite{aaronson}. In \cite{dunjko}, a quadratic improvement is common, and even exponential in relatively short time scales (converges to quadratic as $t \rightarrow \infty$). Schuld, et al.~\cite{schuld} describe the ``toolbox of quantum algorithms" to actually be quite well-established and offer promising speedups. The authors detail in great depth various concrete examples of learning problems which are performed on classical computers and consider the same task on a quantum computer. An example they provide is from~\cite{lloyd} which proposes that a quantum version of the nearest-centroid algorithm~\cite{centroid} is more efficient than the polynomial runtime required for the same task on a classical computer, even despite the auxiliary quantum operations that need to be performed. \\
+
+  Bioinformatics, in contrast to the analysis of quantum machine learning above, is built upon the foundations of biology, machine learning, and statistical methods. Similar tasks, namely classification and clustering, have been used since the advent of the study of bioinformatics. In~\cite{ward}, the structures of mRNA, tRNA, and rRNA are predicted by testing the energy levels required to form a structure. A structure can be predicted with a certain accuracy by measuring such energy levels. Confidence is proportional to a lower energy level, since it takes less energy to form that structure. It is unlikely for a structure requiring a high energy level to form since it is biologically inefficient, and this data is used to train a machine learning classification model using support vector machines. Other classification problems are introduced and suggested in~\cite{byvatov}, where support vector machines are demonstrated to perform well on tasks such as identifying molecules that modulate the function of certain protein receptors, compared to other approaches such as neural networks. \\
+
+  Changing perspective, clustering methods are also used in bioinformatics. Higham, et al.~\cite{higham} cover in great depth the mechanics of spectral clustering, and offer light into its use in bioinformatics. In particular, they address gene expression activity across various tissue samples, and explain how clustering is a natural approach for resolving such gene activity. In~\cite{olman}, the overwhelming amount of modern data (``big data'') is addressed and clustering approaches are suggested for reducing the complexity of bioinformatics problems. A minimum spanning tree representation is utilized within a clustering approach within a software called CLUMP are introduced, and drastic time complexity improvement is promised with using such software. \\
+
+  Combining bioinformatics with quantum machine learning is relatively new and unexplored space, at least in the public domain. Despite this, I think it is clear that there is much potential in the future of computing.
+
+\bibliographystyle{plain}
+\raggedright
+\bibliography{./writing5}
+
+\end{document}

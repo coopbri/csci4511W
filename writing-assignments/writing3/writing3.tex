@@ -1,0 +1,60 @@
+\documentclass{article}
+
+% Packages
+\usepackage{indentfirst}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{hyperref} \hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+}
+
+\newcommand{\ind}{\setlength\itemindent{25pt}}
+
+\title{CSCI 4511W Writing Assignment 3}
+\author{Brian Cooper \\ coope824@umn.edu \\ University of Minnesota}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Problem Description}
+  The problem I am analyzing is how well quantum machine learning algorithms can aid and be applied to current machine learning problems in contrast to their classical counterparts. In particular, I am curious about runtime complexity and application practicality. Three articles with various approaches and details about such algorithms and methods are further discussed in this document, but first, an introduction to the terminology: \textit{quantum machine learning} is an emergent field that combines the relatively theoretical and plastic field of quantum computing with the similarly theoretical, yet well-applied and well-understood field of machine learning. Although quantum machine learning applications are not yet prevalent, these composite fields have a firm foundation backed by decades of research and humans are now beginning to harness the technology in a tangible way with the advent of engineered quantum computing infrastructure. \\
+
+  Quantum computers are slated to be particularly useful for solving optimization tasks, which lie at the heart of many artificial intelligence problems, such as how well an agent can perform within a constrained environment. This affinity is due to quantum computer's direct (natural) harnessing of quantum superposition, which allows multiple operations to be performed simultaneously in time. However, there are various modern limitations to using quantum computers, largely due to lack of infrastructure. A core problem that stems from this is qubit (``quantum bit") bandwidth issues -- keeping qubits stable is very hard due to external (and even internal) noise, such as thermal energy and electromagnetic radiation. Another issue is scalability -- there are not many computers (as far as public, declassified information goes) that can steadily stabilize more than a few qubits (contrast this to classical bits, i.e. ``regular" computer bits, which are highly stable). Despite this, there exist public frameworks and APIs for directly interacting with and classicaly simulating quantum operations. Notable projects include:
+    \begin{itemize}
+      \ind
+      \item IBM Q~\cite{ibm}
+      \item Microsoft Quantum~\cite{msft}
+      \item Rigetti Quantum Cloud Services~\cite{rigetti}
+      \item D-Wave Ocean~\cite{dwave}
+    \end{itemize}
+
+  Each of the projects above, while young, offers a promising future for the application of quantum machine learning algorithms.
+
+\section{Literature Review}
+  Three papers related to quantum machine learning were reviewed:
+
+  \begin{enumerate}
+    \ind
+    \item \textit{Quantum machine learning} by Biamonte, et al. (2017)
+    \item \textit{Quantum-enhanced machine learning} by Dunjko, et al. (2016)
+    \item \textit{An introduction to quantum machine learning} by Schuld, et al. (2015)
+  \end{enumerate} \
+
+  Each of the three articles customarily uses classical machine learning approaches as a baseline for analyzing corresponding quantum counterparts, however they differ in their proposals for analysis and applied solutions. Biamonte, et al.~\cite{biamonte} argue that machine learning has a bright future when utilizing quantum processing power, and they mention that significant advancements have been made when it comes to hardware. They clarify that certain devices (such as annealing quantum computers) \textit{have} been built with apparently large qubit counts (2000, for example), although they do not communicate with each other well at such a scale yet, so there is ample room for improvement. Dunjko, et al.~\cite{dunjko} primarily discussed complexity improvements for quantum methods. Finally, the paper by Schuld, et al.~\cite{schuld} solely zones in on classification and clustering methods (although in great depth) and emphasizes that we need to be careful in the wishful optimism of quantum computing's usefulness to machine learning -- especially considering its infancy. Despite this caution, the paper expresses hope and considers the field to have a promising future. \\
+
+  When it comes to practicality, it is argued in~\cite{biamonte} that the foundation for quantum machine learning algorithms is strong, yet considerably limited by hardware and software challenges. An important point in~\cite{schuld} is that the ability to simulate the actual, concrete learning process in quantum systems is unsatisfactorily documented, and thus requires more development. \\
+
+  Two dominant machine learning tasks, classification and clustering, were considered in each of the papers, with differing depths of analysis in associated algorithms (such as support vector machines with various kernels for classification and k-means for clustering). Biamonte, et al.~\cite{biamonte} provide several runtime complexity difference estimates for various quantum algorithms. Quantum support vector machines, for example, are estimated to perform faster with an $O(\log{N})$ speedup (exponential speedup), albeit with certain constraints~\cite{aaronson}. In \cite{dunjko}, a quadratic improvement is common, and even exponential in relatively short time scales (converges to quadratic as $t \rightarrow \infty$). Schuld, et al.~\cite{schuld} describe the ``toolbox of quantum algorithms" to actually be quite well-established and offer promising speedups. The authors detail in great depth various concrete examples of learning problems which are performed on classical computers and consider the same task on a quantum computer. An example they provide is from~\cite{lloyd} which proposes that a quantum version of the nearest-centroid algorithm~\cite{centroid} is more efficient than the polynomial runtime required for the same task on a classical computer, even despite the auxiliary quantum operations that need to be performed. \\
+
+  My problem, as stated at the beginning of this document, is to consider how well quantum machine learning algorithms can perform on similar tasks to those of classical machine learning algorithms. Each of the papers proposed significant complexity improvements, and \cite{schuld} in particular addresses various examples of real, concrete machine learning problems with promising improvements for quantum machine learning variants. This paper, with its ample concrete examples, serves as a useful foundation for the problem I am trying to solve, particularly in contrast to the other analyzed papers. As far as classification and clustering go, quantum machine learning alternatives appear to assure a promising increase in performance. As the infrastructure develops, I envision quantum computers and quantum machine learning algorithms having a monumental place in society, both as coprocessors that supplement classical computers and as dedicated machines.
+
+\newpage
+\bibliographystyle{plain}
+\raggedright
+\bibliography{./writing3}
+
+\end{document}
